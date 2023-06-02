@@ -96,8 +96,8 @@ namespace FruitsOrm10.View
 				Console.WriteLine("Enter price: ");
 				fruit.Price = double.Parse(Console.ReadLine());
 				Console.WriteLine("Enter availability: ");
-				fruit.TypeId= int.Parse(Console.ReadLine());
-				fruitLogic.Update(int id, Fruit fruit);
+				fruit.TypeId= Console.ReadLine();
+				fruitLogic.Update( id,  fruit);
 			}
 			else
 			{
@@ -113,8 +113,8 @@ namespace FruitsOrm10.View
 			Console.WriteLine("Enter price: ");
 			fruit.Price = double.Parse(Console.ReadLine());
 			Console.WriteLine("Enter availability: ");
-			fruit.Stock = int.Parse(Console.ReadLine());
-			productBusiness.Add(fruit);
+			fruit.TypeId = Console.ReadLine();
+		     fruitLogic.Create(fruit);
 		}
 
 		private void ListAll()
@@ -122,10 +122,10 @@ namespace FruitsOrm10.View
 			Console.WriteLine(new string('-', 40));
 			Console.WriteLine(new string(' ', 16) + "PRODUCTS" + new string(' ', 16));
 			Console.WriteLine(new string('-', 40));
-			var products = productBusiness.GetAll();
-			foreach (var item in products)
+			var fruit = fruitLogic.GetAll();
+			foreach (var item in fruit)
 			{
-				Console.WriteLine("{0} {1} {2} {3}", item.Id, item.Name, item.Price, item.Stock);
+				Console.WriteLine("{0} {1} {2} {3}", item.Id, item.Name, item.Price, item.TypeId);
 			}
 		}
 	}
