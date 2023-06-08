@@ -21,7 +21,7 @@ namespace FruitsOrm10.Controller
         }
         public List<Fruit> GetAll()
         {
-            return _fruitContext.Fruits.Include("FruitType").ToList();
+            return _fruitContext.Fruits.Include("FruitTypes").ToList();
         }
         public void Create(Fruit fruit)
         {
@@ -38,6 +38,7 @@ namespace FruitsOrm10.Controller
             findedFruit.Description = fruit.Description;
             findedFruit.TypeId = fruit.TypeId;
             findedFruit.Price = fruit.Price;
+            findedFruit.FruitTypes = fruit.FruitTypes;
             _fruitContext.SaveChanges();
         }
         public void Delete(int id)

@@ -17,7 +17,7 @@ namespace FruitsOrm10.View
 			Input();
 		}
 
-		private void ShowMenu()
+		public void ShowMenu()
 		{
 			Console.WriteLine(new string('-', 40));
 			Console.WriteLine(new string(' ', 18) + "MENU" + new string(' ', 18));
